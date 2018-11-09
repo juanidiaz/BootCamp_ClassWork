@@ -1,0 +1,15 @@
+
+
+1- start a clean repositories on GitHub with work.
+2- add to this repository:
+		Student Bio html file
+		Start working into homework (student bio is part of the homework)
+3- Download and redo activites:
+		git clone git@utoronto.bootcampcontent.com:utoronto-bootcamp/UTOR201809ONLINE3.git
+			OR
+		$ git clone https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR201809ONLINE3.git
+		https://www.youtube.com/watch?v=kMBinXTCrXI
+4- Check Gitn_Pro_HTML_CSS.pptx from source folder
+5- Redo activities from last clases
+		Saturday (11/3):  https://zoom.us/recording/share/gkr45mCx2fPp89rkqOZTrMGqE6CDnkfOdYVck-8rFV-wIumekTziMw
+		Tuesday (11/6):  https://zoom.us/recording/share/bOWwMtWgV66L5xkjoW471Tt1jvWmCLV7HDo1J2UnUVWwIumekTziMw?startTime=1541546086000

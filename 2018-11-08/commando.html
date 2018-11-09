@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>PMX XD Commando</title>
+  <link id="cssController" rel="stylesheet" href="public/styles/commando.css" />
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+  <h1>Localizatiton XD controller</h1>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>L-SHAPE original</td>
+        <td><button class="play" onclick="playLShape()">IN</button></td>
+        <td><button class="clear" onclick="clearLShape()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>L-SHAPE image</td>
+        <td><button class="play" onclick="playLShape2()">IN</button></td>
+        <td><button class="clear" onclick="clearLShape2()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>UGC backgound</td>
+        <td><button class="play" onclick="playUGC()">IN</button></td>
+        <td><button class="clear" onclick="clearUGC()">OUT</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>City observations</td>
+        <td><button class="play" onclick="playCityObservation()">IN</button></td>
+        <td><button class="clear" onclick="clearCityObservation()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>City data</td>
+        <td><button class="play" onclick="playCityData()">IN</button></td>
+        <td><button class="clear" onclick="clearCityData()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>City forecast</td>
+        <td><button class="play" onclick="playCityForecast()">IN</button></td>
+        <td><button class="clear" onclick="clearCityForecast()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>Radar in L-SHAPE</td>
+        <td><button class="play" onclick="playRadarBox()">IN</button></td>
+        <td><button class="clear" onclick="clearRadarBox()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>Station ID</td>
+        <td><button class="play" onclick="playStationID()">IN</button></td>
+        <td><button class="clear" onclick="clearStationID()">OUT</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Headlines</td>
+        <td><button class="play" onclick="playWxHeadlines()">IN</button></td>
+        <td><button class="clear" onclick="clearWxHeadlines()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>Takeover</td>
+        <td><button class="play" onclick="playTakeover()">IN</button></td>
+        <td><button class="clear" onclick="clearTakeover()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>Sponsor logo</td>
+        <td><button class="play" onclick="playSponsorLogo()">IN</button></td>
+        <td><button class="clear" onclick="clearSponsorLogo()">OUT</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>UGC backgound</td>
+        <td><button class="play" onclick="playUGC()">IN</button></td>
+        <td><button class="clear" onclick="clearUGC()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>Radar</td>
+        <td><button class="play" onclick="playRadar()">IN</button></td>
+        <td><button class="clear" onclick="clearRadar()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>24 Hours</td>
+        <td><button class="play" onclick="play24Hours()">IN</button></td>
+        <td><button class="clear" onclick="clear24Hours()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>7 Days</td>
+        <td><button class="play" onclick="play7Days()">IN</button></td>
+        <td><button class="clear" onclick="clear7Days()">OUT</button></td>
+      </tr>
+      <tr>
+        <td>Sponsor animated extro</td>
+        <td><button class="play" onclick="playSponsorAnimFull()">IN</button></td>
+        <td><button class="clear" onclick="clearSponsorAnimFull()">OUT</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script type="text/javascript">
+
+    var socket = io('/controller');
+
+    function clearLShape() {
+      var command = { type: "clear", layer: "LShape" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearCityObservation() {
+      var command = { type: "clear", layer: "CityObservation" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearCityData() {
+      var command = { type: "clear", layer: "CityData" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearCityForecast() {
+      var command = { type: "clear", layer: "CityForecast" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearStationID() {
+      var command = { type: "clear", layer: "StationID" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearWxHeadlines() {
+      var command = { type: "clear", layer: "Banner" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearSponsorLogo() {
+      var command = { type: "clear", layer: "SponsorLogo" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearUGC() {
+      var command = { type: "clear", layer: "FullScreenBackground" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearLShape2() {
+      var command = { type: "clear", layer: "LShape" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearRadar() {
+      var command = { type: "clear", layer: "FullScreenProduct" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearRadarBox() {
+      var command = { type: "clear", layer: "CityForecast" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clear24Hours() {
+      var command = { type: "clear", layer: "FullScreenProduct" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clear7Days() {
+      var command = { type: "clear", layer: "FullScreenProduct" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearTakeover() {
+      var command = { type: "clear", layer: "Banner" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function clearSponsorAnimFull() {
+      var command = { type: "clear", layer: "FullScreenProduct" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playLShape() {
+      var command = { type: "play", layer: "LShape", template: "lshape" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playCityObservation() {
+      var command = { type: "play", layer: "CityObservation", template: "cityobservation" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playCityData() {
+      var command = { type: "play", layer: "CityData", template: "citydata" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playCityForecast() {
+      var command = { type: "play", layer: "CityForecast", template: "cityforecast" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playStationID() {
+      var command = { type: "play", layer: "StationID", template: "stationid" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playWxHeadlines() {
+      var command = { type: "play", layer: "Banner", template: "wxheadlines" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playSponsorLogo() {
+      var command = { type: "play", layer: "SponsorLogo", template: "sponsorlogo" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playUGC() {
+      var command = { type: "play", layer: "FullScreenBackground", template: "ugc" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playLShape2() {
+      var command = { type: "play", layer: "LShape", template: "lshape-2" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playRadar() {
+      var command = { type: "play", layer: "FullScreenProduct", template: "radar" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playRadarBox() {
+      var command = { type: "play", layer: "CityForecast", template: "radar2" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function play24Hours() {
+      var command = { type: "play", layer: "FullScreenProduct", template: "24hours" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function play7Days() {
+      var command = { type: "play", layer: "FullScreenProduct", template: "7days" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playTakeover() {
+      var command = { type: "play", layer: "Banner", template: "takeover" };
+      socket.emit('triggerCommand', command);
+    }
+
+    function playSponsorAnimFull() {
+      var command = { type: "play", layer: "FullScreenProduct", template: "sponsoranimfull" };
+      socket.emit('triggerCommand', command);
+    }
+
+  </script>
+
+</body>
+
+</html>
